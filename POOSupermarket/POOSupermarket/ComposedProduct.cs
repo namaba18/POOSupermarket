@@ -14,9 +14,9 @@
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                $"Products...: {Products} " +
-                $"Discount...: {Discount:C2},18" +
-                $"Value......: {ValueToPay():C2},18";
+                $"\n\tProducts...: {Products} " +
+                $"\n\tDiscount...: {$"{Discount:P2}",18}" +
+                $"\n\tValue......: {$"{ValueToPay():C2}",18}";
         }
 
     }

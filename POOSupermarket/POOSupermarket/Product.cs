@@ -13,8 +13,8 @@
         public override string ToString()
         {
             return $"{$"{Id}",6} {Description}" +
-                $"\nPrice......: {$"{Price:C2}",18}" +
-                $"\nTax........: {$"{Tax:P2}",18}";
+                $"\n\tPrice......: {$"{Price:C2}",18}" +
+                $"\n\tTax........: {$"{Tax:P2}",18}";
         }
 
         public abstract decimal ValueToPay(); 

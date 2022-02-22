@@ -2,14 +2,16 @@
 {
     public class FixedPriceProduct : Product
     {
-        public override string ToString()
-        {
-            return $"Value......: {$"{ValueToPay():C2}",18}";
-        }
-
         public override decimal ValueToPay()
         {
-            return Price * (decimal)Tax;
+            return Price + Price * (decimal)Tax;
         }
+        public override string ToString()
+        {
+            return $"{base.ToString()}" +
+                $"\n\tValue......: {$"{ValueToPay():C2}",18}";
+        }
+
+
     }
 }

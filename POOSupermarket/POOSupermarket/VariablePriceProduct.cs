@@ -15,9 +15,9 @@
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                $"Measurement: {$"{Measurement}, 18"}" +
-                $"Quantity...: {$"{Quantity}, 18"}" +
-                $"Value......: {$"{ValueToPay()}:C2, 18"}";
+                $"\n\tMeasurement: {$"{Measurement}", 18}" +
+                $"\n\tQuantity...: {$"{Quantity}", 18}" +
+                $"\n\tValue......: {$"{ValueToPay():C2}", 18}";
 
         }
     }
