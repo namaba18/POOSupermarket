@@ -1,6 +1,6 @@
 ﻿namespace POOSupermarket
 {
-    internal class ComposedProduct : Product
+    public class ComposedProduct : Product
     {
         public float Discount { get; set; }
 
@@ -8,15 +8,21 @@
 
         public override decimal ValueToPay()
         {
-            return 78000M;
+            decimal total = 0;
+            foreach (Product p in Products)
+            {
+                total = Product
+            }
+                return 78000M;
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()}" +
-                $"\n\tProducts...: {Products} " +
-                $"\n\tDiscount...: {$"{Discount:P2}",18}" +
-                $"\n\tValue......: {$"{ValueToPay():C2}",18}";
+            foreach (Product p in Products)
+            {
+                return Product.ToString();
+            }
+            return " ";
         }
 
     }
