@@ -11,18 +11,21 @@
             decimal total = 0;
             foreach (Product p in Products)
             {
-                total = Product
+                total = p.ValueToPay() + total; 
             }
-                return 78000M;
+                return total-(total*(decimal)Discount);
         }
 
         public override string ToString()
         {
+            string cadena = "";
             foreach (Product p in Products)
             {
-                return Product.ToString();
-            }
-            return " ";
+                cadena = $"{cadena}, {p.Description}";
+               }
+            return $"{$"{Id}",6} {cadena}" +
+                $"\n\tDiscount...: { $"{Discount:P2}",18}" +
+                $"\n\tValue......: {$"{ValueToPay():C2}",18}";
         }
 
     }

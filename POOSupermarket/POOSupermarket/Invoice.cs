@@ -2,23 +2,28 @@
 {
     public class Invoice : IPay
     {
-        private List<Product> _product;
+        private List<Product> _product = new List<Product>();
 
-        public void Addproduct(Product product)
+        public Invoice()
+        {
+        }
+
+        public void AddProduct(Product product)
         {
             _product.Add(product);
         }
 
-        //public void Invoice()
-
         public override string ToString()
         {
-            foreach (Product product in _product)
+            string cadena = "";
+            foreach (Product p in _product)
             {
-                return product.ToString();
+                cadena = $"{cadena}\n\n{p.ToString()}";
             }
 
-            return " ";
+            return $"RECEIPT" +
+$"\n-------------------------------------------------" +
+cadena;
         }
 
         public decimal ValueToPay()
