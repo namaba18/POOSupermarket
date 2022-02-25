@@ -18,12 +18,14 @@
             string cadena = "";
             foreach (Product p in _product)
             {
-                cadena = $"{cadena}\n\n{p.ToString()}";
+                cadena += $"\n{p.ToString()}";
             }
 
             return $"RECEIPT" +
-$"\n-------------------------------------------------" +
-cadena;
+                    $"\n-------------------------------------------------" +
+                    $"\n{cadena}" +
+                    $"\n                          =============" +
+                    $"\n                     {$"{ValueToPay():C2}",18}";
         }
 
         public decimal ValueToPay()
@@ -31,8 +33,7 @@ cadena;
             decimal prev = 0, total=0;
             foreach (Product product in _product)
             {
-                prev = product.ValueToPay();
-                total = product.ValueToPay() + prev;
+                total += product.ValueToPay();
             }
             
             return total ;

@@ -1,4 +1,6 @@
-﻿namespace POOSupermarket
+﻿using System.Linq;
+
+namespace POOSupermarket
 {
     public class ComposedProduct : Product
     {
@@ -21,10 +23,11 @@
             string cadena = "";
             foreach (Product p in Products)
             {
-                cadena = $"{cadena}, {p.Description}";
-               }
-            return $"{$"{Id}",6} {cadena}" +
-                $"\n\tDiscount...: { $"{Discount:P2}",18}" +
+                cadena += $"{p.Description}";
+            }
+            return $"{$"{Id}",7} {$"{Description}"}" +
+                $"\n\tProducts...: {$"{cadena}"}" +
+                $"\n\tDiscount...: {$"{Discount:P2}",18}" +
                 $"\n\tValue......: {$"{ValueToPay():C2}",18}";
         }
 
