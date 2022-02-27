@@ -13,7 +13,7 @@ namespace POOSupermarket
             decimal total = 0;
             foreach (Product p in Products)
             {
-                total = p.ValueToPay() + total; 
+                total = Product
             }
                 return total-(total*(decimal)Discount);
         }
@@ -23,7 +23,7 @@ namespace POOSupermarket
             string cadena = "";
             foreach (Product p in Products)
             {
-                cadena += $"{p.Description}";
+                return Product.ToString();
             }
             return $"{$"{Id}",7} {$"{Description}"}" +
                 $"\n\tProducts...: {$"{cadena}"}" +
