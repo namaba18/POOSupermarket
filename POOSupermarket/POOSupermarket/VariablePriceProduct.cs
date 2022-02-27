@@ -14,9 +14,11 @@
 
         public override string ToString()
         {
-            return $"{base.ToString()}" +
+            return $"{$"{Id}",7} {Description}" +
                 $"\n\tMeasurement: {$"{Measurement}", 18}" +
-                $"\n\tQuantity...: {$"{Quantity}", 18}" +
+                $"\n\tQuantity...: {$"{Quantity:F2}", 18}" +
+                $"\n\tPrice......: {$"{Price:C2}",18}" +
+                $"\n\tTax........: {$"{Tax:P2}",20}" +
                 $"\n\tValue......: {$"{ValueToPay():C2}", 18}";
 
         }

@@ -25,12 +25,12 @@
                     $"\n-------------------------------------------------" +
                     $"\n{cadena}" +
                     $"\n                          =============" +
-                    $"\n                     {$"{ValueToPay():C2}",18}";
+                    $"\nTOTAL                {$"{ValueToPay():C2}",18}";
         }
 
         public decimal ValueToPay()
         {
-            decimal prev = 0, total=0;
+            decimal total=0;
             foreach (Product product in _product)
             {
                 total += product.ValueToPay();

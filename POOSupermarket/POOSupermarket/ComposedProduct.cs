@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace POOSupermarket
+﻿namespace POOSupermarket
 {
     public class ComposedProduct : Product
     {
@@ -13,21 +11,22 @@ namespace POOSupermarket
             decimal total = 0;
             foreach (Product p in Products)
             {
-                total = Product
+                total += p.ValueToPay();
             }
-                return total-(total*(decimal)Discount);
+            return total - (total * (decimal)Discount);
         }
 
         public override string ToString()
         {
-            string cadena = "";
-            foreach (Product p in Products)
+            string cadena = Products.First().Description;
+            for (int i = 1; i < Products.Count-1; i++)
             {
-                return Product.ToString();
+                cadena += $", {Products.ElementAt(i).Description}";
             }
+
             return $"{$"{Id}",7} {$"{Description}"}" +
                 $"\n\tProducts...: {$"{cadena}"}" +
-                $"\n\tDiscount...: {$"{Discount:P2}",18}" +
+                $"\n\tDiscount...: {$"{Discount:P2}",20}" +
                 $"\n\tValue......: {$"{ValueToPay():C2}",18}";
         }
 

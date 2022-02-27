@@ -14,7 +14,7 @@
         {
             return $"{$"{Id}",7} {Description}" +
                 $"\n\tPrice......: {$"{Price:C2}",18}" +
-                $"\n\tTax........: {$"{Tax:P2}",18}";
+                $"\n\tTax........: {$"{Tax:P2}",20}";
         }
 
         public abstract decimal ValueToPay(); 
